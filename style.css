@@ -1,8 +1,17 @@
-.column {
+.column{
     color: rgb(58, 80, 175);
+    border: 1px solid;
 }
-
+#container * {
+    border: .1px solid;
+    
+}
 #container {
     display: flex;
     flex-direction: row;
+    
+    width: 100%;
+    height: 200%;
+    justify-content: center;
+    align-items: center;
 }
