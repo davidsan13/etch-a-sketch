@@ -4,8 +4,15 @@
 }
 #container * {
     border: .1px solid;
-    
 }
+#container *:hover {
+    background-color: black;
+}
+
+.div0 .column1:hover {
+    background-color: black;
+}
+
 #container {
     display: flex;
     flex-direction: row;
