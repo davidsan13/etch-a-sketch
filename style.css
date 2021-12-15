@@ -1,24 +1,9 @@
-.column{
-    color: rgb(58, 80, 175);
-    border: 1px solid;
-}
-#container * {
-    border: .1px solid;
-}
-#container *:hover {
-    background-color: black;
-}
-
-.div0 .column1:hover {
-    background-color: black;
+* {
+    box-sizing: border-box;
 }
 
 #container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(16, 25px [col-start]);
     
-    width: 100%;
-    height: 200%;
-    justify-content: center;
-    align-items: center;
 }
