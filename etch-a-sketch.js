@@ -5,7 +5,7 @@ createResetButton();
 
 function init(){
     for(let row = 0; row < 16* 16; row++) {
-        const container = document.querySelector('.sub-container');
+        const container = document.querySelector('#sub-container');
         container.style.gridTemplateColumns= `repeat(16, 1fr)`
         const newDiv = document.createElement("div");
         newDiv.classList.add('div'+ row)
@@ -18,7 +18,7 @@ function init(){
 }
 
 function createResetButton(){
-    const container = document.querySelector('.sub-container');
+    const container = document.querySelector('#sub-container');
     const div = document.createElement('BUTTON');
     div.innerHTML = "RESET"
     div.classList.add('reset')
@@ -29,35 +29,24 @@ function createResetButton(){
 
 function createGrid() {
     let userInput = prompt("Entergrid size");
-    
-    const div = document.getElementsByClassName('sub-container');
+    const div = document.getElementById('sub-container');
     console.log(div);
     console.log(div.firstChild);
     while(div.firstChild){
         div.removeChild(div.firstChild);
-        console.log(hi)
+        console.log("hi")
     }
-    /*for(let row = 0; row < userInput * userInput; row++) {
-
-        const container = document.querySelector('.sub-container');
-        container.style.gridTemplateColumns= `repeat(${userInput}, 1fr)`
+    for(let row = 0; row < userInput * userInput; row++) {
+        const container = document.querySelector('#sub-container');
+        container.style.gridTemplateColumns= `repeat(${userInput}, 1fr)`;
         const newDiv = document.createElement("div");
         newDiv.classList.add('div'+ row)
-        container.appendChild(newDiv);*/
-        /* for(let column = 0; column < userInput; column++) {
-            const container = document.querySelector(".div" + row);
-            const newDiv = document.createElement("div");
-            const newContent = document.createTextNode("hi");
-            newDiv.appendChild(newContent)
-            newDiv.classList.add('column' + column)
-            container.appendChild(newDiv);
-            
-            console.log(grid)
-            grid.forEach(function(gr) {
-                gr.addEventListener("mouseover", hover);
-            })
-        }*/
-    
+        container.appendChild(newDiv);
+        const grid = document.querySelectorAll('.div' + row);
+        grid.forEach(function(gr) {
+            gr.addEventListener("mouseover", hover);
+        });
+    }
 }
 
 function hover() {
